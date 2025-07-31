@@ -42,6 +42,22 @@ public static void main(String[] args){
             break;
         }
 
+
+        double number;
+
+        while(true) {
+            System.out.print("Lütfen bir sonraki sayıyı girin: ");
+            try {
+                number = scanner.nextDouble();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Hatalı sayısal değer girdiniz!");
+                scanner.next();
+            }
+        }
+
+        
+
     }
 
     scanner.close();
