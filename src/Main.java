@@ -23,7 +23,26 @@ public static void main(String[] args){
         }
     }
 
+    while(true) {
+        char operator;
+        while (true) {
+            System.out.print("Lütfen bir işlem girin (+, -, *, /, %) veya sonucu görmek için '=' girin: ");
+            operator = scanner.next().charAt(0);
 
+            if (operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%' || operator == '=') {
+
+                break;
+
+            } else {
+                System.out.println("Hatalı işlem girdiniz!");
+            }
+        }
+        if (operator == '=') {
+            System.out.println("İşlem sonucunuz: " + result);
+            break;
+        }
+
+    }
 
     scanner.close();
  }
