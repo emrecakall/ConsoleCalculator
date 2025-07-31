@@ -56,7 +56,15 @@ public static void main(String[] args){
             }
         }
 
-        
+        switch (operator) {
+            case '+' -> result += number;
+            case '-' -> result -= number;
+            case '*' -> result *= number;
+            case '/' -> result /= number;
+            case '%' -> result %= number;
+        }
+
+        System.out.println("Mevcut sonuç: " + result);
 
     }
 
