@@ -60,12 +60,23 @@ public static void main(String[] args){
             case '+' -> result += number;
             case '-' -> result -= number;
             case '*' -> result *= number;
-            case '/' -> result /= number;
-            case '%' -> result %= number;
+            case '/' -> {
+                if (number != 0) {
+                    result /= number;
+                } else {
+                    System.out.println("Bir sayı sıfıra bölünemez!");
+                }
+            }
+            case '%' -> {
+                if (number != 0) {
+                    result %= number;
+                } else {
+                    System.out.println("Bir sayının sıfıra göre modu alınamaz!");
+                }
+            }
         }
 
         System.out.println("Mevcut sonuç: " + result);
-
     }
 
     scanner.close();
