@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args){
 
         Scanner scanner = new Scanner(System.in);
+        Calculator calculator = new Calculator();
 
         System.out.println("-------------------------------");
         System.out.println("Hesap Makinesine Hoş Geldiniz!");
@@ -12,7 +13,7 @@ public class Main {
         double result = 0;
         boolean isFirstNumberReceived = false;
         while(!isFirstNumberReceived) {
-            System.out.print("\nLütfen bir sayı girin: ");
+            System.out.print("\nLütfen bir sayı girin: "); 
             try {
                 result = scanner.nextDouble();
                 isFirstNumberReceived = true;
@@ -54,23 +55,11 @@ public class Main {
                 }
             }
             switch (operator) {
-                case '+' -> result += number;
-                case '-' -> result -= number;
-                case '*' -> result *= number;
-                case '/' -> {
-                    if (number != 0) {
-                        result /= number;
-                    } else {
-                        System.out.println("Bir sayı sıfıra bölünemez!");
-                    }
-                }
-                case '%' -> {
-                    if (number != 0) {
-                        result %= number;
-                    } else {
-                        System.out.println("Bir sayının sıfıra göre modu alınamaz!");
-                    }
-                }
+                case '+' -> result = calculator.add(result, number);
+                case '-' -> result = calculator.subtract(result, number);
+                case '*' -> result = calculator.multiply(result, number);
+                case '/' -> result = calculator.divide(result, number);
+                case '%' -> result = calculator.getRemainder(result, number);
             }
 
             System.out.println("Mevcut sonuç: " + result);
