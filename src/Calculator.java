@@ -4,19 +4,27 @@ public class Calculator {
             return number1 + number2;
         }
 
-        public double subtrack(double number1, double number2){
-        return number1 - number2;
+        public double subtract(double number1, double number2){
+            return number1 - number2;
          }
 
         public double multiply(double number1, double number2){
-        return number1 * number2;
+            return number1 * number2;
         }
 
         public double divide(double number1, double number2){
-        return number1 / number2;
+            if (number2 != 0) {
+                return number1 / number2;
+            } else {
+                return number1;
+            }
         }
 
          public double getRemainder(double number1, double number2){
-        return number1 % number2;
+             if (number2 != 0) {
+                 return number1 % number2;
+             } else {
+                 return number1;
+             }
         }
 }
