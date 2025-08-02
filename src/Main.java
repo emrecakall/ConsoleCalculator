@@ -67,7 +67,7 @@ public class Main {
                 System.out.println(e.getMessage());
             }
 
-            System.out.println("Mevcut sonuç: " + result);
+            System.out.printf("Mevcut sonuç: %.2f\n", result);
 
         }
         scanner.close();
