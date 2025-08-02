@@ -58,8 +58,21 @@ public class Main {
                 case '+' -> result = calculator.add(result, number);
                 case '-' -> result = calculator.subtract(result, number);
                 case '*' -> result = calculator.multiply(result, number);
-                case '/' -> result = calculator.divide(result, number);
-                case '%' -> result = calculator.getRemainder(result, number);
+                case '/' -> {
+                    try {
+                        result = calculator.divide(result, number);
+                    } catch (IllegalArgumentException e) {
+                        System.out.println("Bir sayı sıfıra bölünemez!");
+                    }
+                }
+
+                case '%' -> {
+                    try{
+                        result = calculator.getRemainder(result, number);
+                    } catch (IllegalArgumentException e) {
+                        System.out.println("Bir sayının sıfıra göre modu alınamaz!");
+                    }
+                }
             }
 
             System.out.println("Mevcut sonuç: " + result);

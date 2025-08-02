@@ -13,18 +13,16 @@ public class Calculator {
         }
 
         public double divide(double number1, double number2){
-            if (number2 != 0) {
-                return number1 / number2;
-            } else {
-                return number1;
+            if (number2 == 0) {
+                throw new IllegalArgumentException("Sıfıra bölme hatası!");
             }
+            return number1 / number2;
         }
 
          public double getRemainder(double number1, double number2){
-             if (number2 != 0) {
-                 return number1 % number2;
-             } else {
-                 return number1;
+             if (number2 == 0) {
+                 throw new IllegalArgumentException("Sıfıra göre mod alma hatası!");
              }
+             return number1 % number2;
         }
 }
