@@ -37,6 +37,7 @@ public class Main {
                     System.out.println("Hatalı işlem girdiniz!");
                 }
             }
+
             if (operator == '='){
                 System.out.println("İşlem sonucunuz: " + result);
                 break;
@@ -54,25 +55,16 @@ public class Main {
                     scanner.next();
                 }
             }
-            switch (operator) {
-                case '+' -> result = calculator.add(result, number);
-                case '-' -> result = calculator.subtract(result, number);
-                case '*' -> result = calculator.multiply(result, number);
-                case '/' -> {
-                    try {
-                        result = calculator.divide(result, number);
-                    } catch (IllegalArgumentException e) {
-                        System.out.println("Bir sayı sıfıra bölünemez!");
-                    }
+            try {
+                switch (operator) {
+                    case '+' -> result = calculator.add(result, number);
+                    case '-' -> result = calculator.subtract(result, number);
+                    case '*' -> result = calculator.multiply(result, number);
+                    case '/' -> result = calculator.divide(result, number);
+                    case '%' -> result = calculator.getRemainder(result, number);
                 }
-
-                case '%' -> {
-                    try{
-                        result = calculator.getRemainder(result, number);
-                    } catch (IllegalArgumentException e) {
-                        System.out.println("Bir sayının sıfıra göre modu alınamaz!");
-                    }
-                }
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
             }
 
             System.out.println("Mevcut sonuç: " + result);
