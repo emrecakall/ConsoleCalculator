@@ -32,7 +32,7 @@ This project is more than just a simple calculator. It includes a variety of pro
 
 1.  Clone the repository to your local machine:
     ```bash
-    git clone [https://github.com/your-username/ConsoleCalculator.git](https://github.com/your-username/ConsoleCalculator.git)
+    git clone https://github.com/emrecakall/ConsoleCalculator.git
     ```
 2.  Open the project in a Java IDE like IntelliJ IDEA or Eclipse.
 3.  Locate and run the `Main.java` file located in the `src` directory.
